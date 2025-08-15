@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processing - Parkinson Disease Detection</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa9nmKyGJia2FYJIKCxh3Pjh672LiN0Lmqqw&s" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georgia&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            background: #e8e6e1;
+            background-image: url('static/img/bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 550px;
+            background: #ffffff;
+            padding: 40px;
+            border: 1px solid #d5dbdb;
+            box-shadow: 2px 3px 8px rgba(0,0,0,0.2);
+        }
+
+        .header {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 25px 30px;
+            margin: -40px -40px 30px -40px;
+            border-left: 5px solid #3498db;
+        }
+
+        .header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 1.8em;
+            font-weight: normal;
+            color: #fff;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        .loading-text {
+            font-size: 1.2em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .loading-spinner {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 25px;
+        }
+
+        .loading-spinner img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #ecf0f1;
+            border: 1px solid #bdc3c7;
+            margin-top: 25px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #3498db;
+            animation: progress 2s ease-in-out infinite;
+        }
+
+        @keyframes progress {
+            0% {
+                width: 0%;
+            }
+            50% {
+                width: 70%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+        .status-text {
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Processing</h1>
+        </div>
+        
+        <div class="content">
+            <div class="loading-text">Analyzing Your Audio Sample</div>
+            
+            <div class="loading-spinner">
+                <img src="static/img/loading.gif" alt="Loading">
+            </div>
+            
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            
+            <div class="status-text">Executing machine learning pipeline...</div>
+        </div>
+    </div>
+
+    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+    <script src="/static/js/app.js"></script>
+    <script>
+        function navigate() {
+            window.location.href = 'show_results';
+        }
+        fetch('execute_pipeline').then(navigate);
+    </script>
+</body>
+</html>

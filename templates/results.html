@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detection Results - Parkinson Disease Detection</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa9nmKyGJia2FYJIKCxh3Pjh672LiN0Lmqqw&s" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georgia&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            background: #e8e6e1;
+            background-image: url('https://www.advancedsciencenews.com/wp-content/uploads/2021/03/12011663.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            padding: 30px 20px;
+            line-height: 1.6;
+        }
+
+        .wrapper {
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 35px 40px;
+            margin-bottom: 25px;
+            border-left: 5px solid #3498db;
+            box-shadow: 2px 3px 8px rgba(0,0,0,0.2);
+        }
+
+        .header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 2.2em;
+            font-weight: normal;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .header .subtitle {
+            font-size: 0.95em;
+            color: #bdc3c7;
+            font-style: italic;
+        }
+
+        .content-box {
+            background: #ffffff;
+            padding: 35px;
+            margin-bottom: 25px;
+            border: 1px solid #d5dbdb;
+            box-shadow: 1px 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .result-text {
+            font-size: 1.05em;
+            color: #34495e;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            line-height: 1.8;
+        }
+
+        .confidence-section {
+            margin-bottom: 25px;
+        }
+
+        .confidence-label {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 0.95em;
+        }
+
+        .meter-bar {
+            background: #ecf0f1;
+            height: 28px;
+            border: 1px solid #bdc3c7;
+            margin-bottom: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .meter-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #e74c3c 0%, #f39c12 50%, #27ae60 100%);
+            transition: width 1s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            color: white;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        .meter-value {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #2c3e50;
+            text-align: right;
+        }
+
+        .disclaimer-box {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .disclaimer-title {
+            font-weight: 600;
+            color: #856404;
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+
+        .disclaimer-text {
+            font-size: 0.9em;
+            color: #856404;
+            line-height: 1.7;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px;
+            background: #2c3e50;
+            color: white;
+            border: none;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-family: inherit;
+        }
+
+        .btn:hover {
+            background: #34495e;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 25px;
+            color: #7f8c8d;
+            font-size: 0.85em;
+            margin-top: 30px;
+        }
+
+        .footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 25px 20px;
+            }
+
+            .content-box {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <h1>Analysis Results</h1>
+            <p class="subtitle">Parkinson Disease Detection</p>
+        </div>
+        
+        <div class="content-box">
+            <div class="result-text">
+                {{ value }}
+            </div>
+
+            <div class="confidence-section">
+                <div class="confidence-label">Confidence Score</div>
+                <div class="meter-bar">
+                    <div class="meter-fill" style="width: {{ probability }}%">
+                        {{ probability }}%
+                    </div>
+                </div>
+                <div class="meter-value">{{ probability }}% Confidence</div>
+            </div>
+
+            <div class="disclaimer-box">
+                <div class="disclaimer-title">Important Disclaimer</div>
+                <div class="disclaimer-text">
+                    This application is not a substitute for professional medical diagnosis. It is intended only as a tool for general informational purposes and should not be relied upon as the sole source for any health-related decisions. Always consult a qualified healthcare professional for any health concerns you may have. Use this information at your own risk.
+                </div>
+            </div>
+
+            <form action="/" method="get">
+                <button type="submit" class="btn">Return to Home</button>
+            </form>
+        </div>
+
+        <div class="footer">
+            <p>For more information, visit <a href="https://www.nature.com/articles/s41598-023-47568-w" target="_blank">our research paper</a>.</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+    <script src="/static/js/app.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            const meterFill = document.querySelector('.meter-fill');
+            const width = meterFill.style.width;
+            meterFill.style.width = '0%';
+            setTimeout(() => {
+                meterFill.style.width = width;
+            }, 300);
+        });
+    </script>
+</body>
+</html>

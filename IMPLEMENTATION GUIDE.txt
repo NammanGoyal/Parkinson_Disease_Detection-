@@ -1,0 +1,21 @@
+INSTALL
+----------------
+PYTHON 3.11/3.12
+
+IMPLEMENTATION
+----------------
+1.EXTRACT ZIP FILE
+2.OPEN FILE DIRECTORY IN CMD (COMMAND PROMPT)
+3.AFTER OPENING CMD 
+C:\Users\HP\Desktop\PROJECTS\Parkinson Disease Detection Using Speech-(now type)
+
+
+pip install -r requirements.txt
+
+python app.py
+
+4.NOW ITS RUNNING COPY AND PASTE URL IN BROWSER
+
+http://localhost:5000/
+
+------------------------------

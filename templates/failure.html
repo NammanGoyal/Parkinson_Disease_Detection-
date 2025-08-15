@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Failed - Parkinson Disease Detection</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa9nmKyGJia2FYJIKCxh3Pjh672LiN0Lmqqw&s" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georgia&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            background: #e8e6e1;
+            background-image: url('https://www.advancedsciencenews.com/wp-content/uploads/2021/03/12011663.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            background: #ffffff;
+            border: 1px solid #d5dbdb;
+            box-shadow: 2px 3px 8px rgba(0,0,0,0.2);
+        }
+
+        .header {
+            background: #c0392b;
+            color: #ecf0f1;
+            padding: 30px;
+            border-left: 5px solid #e74c3c;
+        }
+
+        .header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 1.8em;
+            font-weight: normal;
+            color: #fff;
+        }
+
+        .content {
+            padding: 35px;
+            text-align: center;
+        }
+
+        .error-icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+
+        .error-message {
+            font-size: 1.1em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .error-details {
+            background: #f8f9fa;
+            border: 1px solid #c0392b;
+            border-left: 4px solid #c0392b;
+            padding: 20px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .error-details h3 {
+            font-size: 1.05em;
+            margin-bottom: 12px;
+            color: #c0392b;
+            font-weight: 600;
+        }
+
+        .error-details ul {
+            list-style-position: inside;
+            line-height: 1.8;
+            color: #555;
+            font-size: 0.95em;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px;
+            background: #2c3e50;
+            color: white;
+            border: none;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-family: inherit;
+        }
+
+        .btn:hover {
+            background: #34495e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Upload Failed</h1>
+        </div>
+        
+        <div class="content">
+            <div class="error-icon">⚠</div>
+            
+            <div class="error-message">
+                Unable to process your file. Please check the requirements below.
+            </div>
+            
+            <div class="error-details">
+                <h3>Supported File Formats:</h3>
+                <ul>
+                    <li>WAV files (.wav)</li>
+                    <li>WMA files (.wma)</li>
+                    <li>MP3 files (.mp3)</li>
+                </ul>
+                <p style="margin-top: 12px; font-size: 0.9em;">
+                    Make sure your file is a valid audio file and try again.
+                </p>
+            </div>
+
+            <form action="/" method="get">
+                <button type="submit" class="btn">Return to Home</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

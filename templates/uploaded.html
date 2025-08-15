@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Successful - Parkinson Disease Detection</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa9nmKyGJia2FYJIKCxh3Pjh672LiN0Lmqqw&s" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georgia&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            background: #e8e6e1;
+            background-image: url('https://www.advancedsciencenews.com/wp-content/uploads/2021/03/12011663.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            background: #ffffff;
+            border: 1px solid #d5dbdb;
+            box-shadow: 2px 3px 8px rgba(0,0,0,0.2);
+        }
+
+        .header {
+            background: #27ae60;
+            color: #ecf0f1;
+            padding: 30px;
+            border-left: 5px solid #2ecc71;
+        }
+
+        .header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 1.8em;
+            font-weight: normal;
+            color: #fff;
+        }
+
+        .content {
+            padding: 35px;
+            text-align: center;
+        }
+
+        .success-icon {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+
+        .success-message {
+            font-size: 1.1em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .info-box {
+            background: #d5f4e6;
+            border: 1px solid #27ae60;
+            border-left: 4px solid #27ae60;
+            padding: 20px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .info-box p {
+            margin: 0;
+            font-size: 0.95em;
+            color: #1e8449;
+            line-height: 1.7;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 14px;
+            background: #2c3e50;
+            color: white;
+            border: none;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-family: inherit;
+        }
+
+        .btn:hover {
+            background: #34495e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Upload Successful</h1>
+        </div>
+        
+        <div class="content">
+            <div class="success-icon">✓</div>
+            
+            <div class="success-message">
+                Your audio file has been uploaded successfully!
+            </div>
+            
+            <div class="info-box">
+                <p>
+                    <strong>Next Step:</strong> Click the button below to start the analysis. 
+                    Our machine learning model will process your audio file and provide you with detailed results.
+                </p>
+            </div>
+
+            <form action="/loading" method="get">
+                <button type="submit" class="btn">Start Analysis</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
